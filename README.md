@@ -6,6 +6,19 @@
 
 **Project URL:** This project is based on the [Unit Converter project from roadmap.sh](https://roadmap.sh/projects/unit-converter)
 
+## Quick Start
+
+**Requirements:** Node.js 20.19.0+ and .NET 8.0 SDK
+
+```bash
+# Terminal 1 - Start backend
+cd backend && dotnet run
+
+# Terminal 2 - Start frontend  
+cd client && npm install && npm run dev
+```
+
+Open `http://localhost:5174` in your browser.
 
 ## Features
 
@@ -38,22 +51,6 @@
 - **ASP.NET Core 8.0** - Cross-platform web framework
 - **C#** - Modern, type-safe programming language
 - **Minimal APIs** - Lightweight API architecture
-
-## Prerequisites
-
-- **Node.js** (v20.19.0 or v22.12.0+)
-- **.NET SDK 8.0** or higher
-
-## Quick Start
-```bash
-# Terminal 1 - Start backend
-cd backend && dotnet run
-
-# Terminal 2 - Start frontend  
-cd client && npm install && npm run dev
-```
-
-Then open `http://localhost:5174`
 
 ## Getting Started
 
@@ -171,9 +168,9 @@ Each conversion mode has its own color scheme:
 The entire interface updates to match the selected mode, providing clear visual feedback.
 
 ### Conversion Logic
-All conversions follow a standard-based approach:
+All conversions follow a canonical form pattern:
 - **Length**: Converts through meters as the base unit
-- **Temperature**: Direct mathematical formulas for each conversion
+- **Temperature**: Converts through Celsius as the base unit
 - **Weight**: Converts through grams as the base unit
 
 Results are rounded to 4 decimal places for precision.
@@ -198,20 +195,6 @@ dotnet run         # Run the server
 dotnet watch       # Run with hot reload
 ```
 
-## Troubleshooting
-
-**Backend won't start:**
-- Ensure .NET 8.0 SDK is installed: `dotnet --version`
-- Check if port 5289 is already in use
-
-**Frontend CORS errors:**
-- Verify backend is running on `http://localhost:5289`
-- Check CORS configuration in `backend/Program.cs`
-
-**Conversion returns unexpected results:**
-- Verify unit names match exactly (case-insensitive but must be spelled correctly)
-- Check that both "From" and "To" units are selected
-
 ## Configuration
 
 ### Frontend API Configuration
@@ -230,17 +213,30 @@ The backend is configured to accept requests from `http://localhost:5173` and `h
 policy.WithOrigins("http://localhost:YOUR_PORT")
 ```
 
+## Troubleshooting
+
+**Backend won't start:**
+- Ensure .NET 8.0 SDK is installed: `dotnet --version`
+- Check if port 5289 is already in use
+
+**Frontend CORS errors:**
+- Verify backend is running on `http://localhost:5289`
+- Check CORS configuration in `backend/Program.cs`
+
+**Conversion returns unexpected results:**
+- Verify unit names match exactly (case-insensitive but must be spelled correctly)
+- Check that both "From" and "To" units are selected
+
 ## Browser Support
 
 - Chrome/Edge (latest)
 - Firefox (latest)
 - Safari (latest)
 
-Good call being transparent about that. Here's how I'd add it:
-
 ---
 
 ## Development Notes
+
 ### What I Learned
 
 This project helped me practice:
@@ -276,3 +272,5 @@ This project is open source and available for educational purposes.
 - Project based on [roadmap.sh Unit Converter project](https://roadmap.sh/projects/unit-converter)
 - Built with Vue 3 and Vuetify 3
 - Backend powered by ASP.NET Core 8.0
+
+---
