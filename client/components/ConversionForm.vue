@@ -1,6 +1,6 @@
 <!-- /client/components/ConversionCard.vue -->
 <template>
-  <v-card max-width="450" class="mx-auto" elevation="8">
+  <v-card width="450" class="mx-auto" elevation="8">
     <v-card-title class="text-h5 bg-primary text-white pa-4">
       <v-icon :icon="modeConfig.icon" class="mr-2"></v-icon>
       {{ modeConfig.title }}
