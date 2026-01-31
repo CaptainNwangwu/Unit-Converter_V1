@@ -1,0 +1,35 @@
+@unit_converter_HostAddress = http://localhost:5289
+@HTTPS_HostAddress = https://localhost:7095
+
+
+POST {{unit_converter_HostAddress}}/convert/length
+Content-Type: application/json
+
+{
+    "Value": 4000,
+    "FromUnit": "milimeters",
+    "ToUnit": "meters"
+}
+###
+
+POST {{unit_converter_HostAddress}}/convert/weight
+Content-Type: application/json
+
+{
+    "value": 255,
+    "fromUnit": "pounds",
+    "toUnit": "kilograms"
+}
+
+###
+
+POST {{unit_converter_HostAddress}}/convert/temperature
+Content-Type: application/json
+
+{
+    "Value": 62,
+    "FromUnit": "FAHRENHEIT",
+    "ToUnit": "CELSIUS"
+}
+
+###
